@@ -5,3 +5,7 @@ I'm always using helpfuls scripts and programs on projects, but they never becom
 ## CPU Temperature
 
 Simple class that reads the files used for temperature in UNIX-like systems. 
+
+## Dropbox Content Hasher
+
+This C++ program takes 1 argument and return the SHA256 dropbox hash. 
