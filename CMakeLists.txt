@@ -10,6 +10,8 @@ find_package(OpenSSL REQUIRED)
 include_directories(include/)
 
 add_executable(cpu_temperature src/cpu_temp.cpp src/CPUTemperature.cpp )
+add_executable(std_set src/std_set.cpp )
+
 
 # Dropbox Hasher
 add_executable(dropbox_hasher src/dropbox_hasher.cpp)
