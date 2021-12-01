@@ -36,7 +36,7 @@ struct NodeComparator
         if( lhs.x == rhs.x && 
             lhs.y == rhs.y &&
             lhs.z == rhs.z ){
-                std::cout << "Found same node" << std::endl;
+                // std::cout << "Found same node" << std::endl;
                 return false;
         }
 
@@ -68,7 +68,8 @@ int main(int argc, char **argv)
     std::cout << "Node 2: " << n2 << std::endl;
     std::cout << "Node 3: " << n3 << std::endl;
     std::cout << "Node 4: " << n4 << std::endl;
-    std::cout << "Node 5: " << n5 << std::endl
+    std::cout << "Node 5: " << n5 << std::endl;
+    std::cout << "Node 6: " << n6 
               << std::endl;
 
     std::set<NodePair, NodeComparator> set;
@@ -77,12 +78,24 @@ int main(int argc, char **argv)
     set.insert({n3, n3.value});
     set.insert({n4, n4.value});
     set.insert({n5, n5.value});
+    
+    //Try to insert multiple times a previously inserted node (n1 is == n6)
     set.insert({n6, n6.value});
     set.insert({n6, n6.value});
     set.insert({n6, n6.value});
     set.insert({n6, n6.value});
+    set.insert({n6, 0});
+    set.insert({n6, 1});
+
     if(set.find({n4, n4.value}) != set.end()){
         std::cout << "Found n4" << std::endl;
+    }
+
+    auto it = set.erase({n4,4});
+    std::cout << "It value: " << it << std::endl;
+    if(set.find({n4, n4.value}) != set.end()){
+        std::cout << "Found n4 after removal" << std::endl;
+
     }
     for (auto &it : set)
     {
